@@ -1,0 +1,29 @@
+<form autocomplete="off" #form="ngForm">
+
+	<h5 class="card-title">Search repositories</h5>
+
+	<div class="form-group row">
+		<label class="col-sm-1.5 col-form-label">GitHub username: </label>
+		<div class="col-sm-2">
+      <input #username class="form-control" name="username" type="text"/>
+    </div>
+    <div class="col-sm-1.5">
+      <button type="button" class="btn btn-outline-primary" (click)="getRepositories(username.value)">
+        <i class="fa fa-search" aria-hidden="true"></i> Search
+      </button>
+    </div>
+    <div *ngIf="repositoriesStorage.length > 0" class="col-sm-3">
+      <button type="button" class="btn btn-outline-primary" (click)="createRepositories()">
+        <i class="fa fa-download" aria-hidden="true"></i> Import data information
+      </button>
+    </div>
+  </div>
+  
+</form>
+
+<app-repositories-list *ngIf="repositoriesStorage.length > 0"
+	[repositoriesList]="repositoriesStorage"
+	[localStorage]="localStorage">
+</app-repositories-list>
+
+<alert class="alert"></alert>

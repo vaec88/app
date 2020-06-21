@@ -1,0 +1,7 @@
+<h5 *ngIf="!updated" class="m-2"> Create repository</h5>
+<h5 *ngIf="updated" class="m-2"> Update repository</h5>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+  <button *ngIf="!updated" type="submit" class="btn btn-primary submit-button">Create</button>
+  <button *ngIf="updated" type="submit" class="btn btn-primary submit-button">Update</button>
+</form>

@@ -1,0 +1,8 @@
+<button type="button" class="btn btn-outline-primary m-2">
+  <a class="nav-link" routerLink="/create"><i class="fa fa-plus" aria-hidden="true"></i> Create a new repository</a>
+</button>
+
+<app-repositories-list
+  [repositoriesList]="repositoriesStorage"
+  [localStorage]="localStorage">
+</app-repositories-list>
